@@ -630,6 +630,7 @@
     "mm.question.requiresgrading": "Requires grading",
     "mm.question.unknown": "Cannot determine status",
     "mm.settings.about": "About",
+	
     "mm.settings.appready": "App ready",
     "mm.settings.cacheexpirationtime": "Cache expiration time (miliseconds)",
     "mm.settings.cannotsyncoffline": "Cannot synchronize offline.",
@@ -698,6 +699,7 @@
     "mm.sidemenu.appsettings": "App settings",
     "mm.sidemenu.changesite": "Change site",
     "mm.sidemenu.help": "Help",
+	"mm.sidemenu.poster": "Update",
     "mm.sidemenu.logout": "Log out",
     "mm.sidemenu.mycourses": "My courses",
     "mm.sidemenu.togglemenu": "Toggle menu",
