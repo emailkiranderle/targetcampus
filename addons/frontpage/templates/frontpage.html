@@ -1,5 +1,7 @@
 <ion-view>
     <ion-nav-title>{{ 'mma.frontpage.sitehome' | translate }}</ion-nav-title>
+	<ion-tabs class="tabs-icon-top">
+	<ion-tab>
     <ion-content mm-state-class padding="true">
         <ion-refresher pulling-text="{{ 'mm.core.pulltorefresh' | translate }}" ng-if="frontpageLoaded" on-refresh="doRefresh()">
         </ion-refresher>
@@ -26,4 +28,12 @@
             <p class="padding" ng-if="!hasContent">{{ 'mm.course.nocontentavailable' | translate }}</p>
         </mm-loading>
     </ion-content>
+	</ion-tab>
+	<ion-tab>
+	<ion-pane ng-controller="mmaMessagesContactsCtrl">
+                    <ng-include src="'addons/messages/templates/contacts.html'"></ng-include>
+                </ion-pane>
+	
+	</ion-tab>
+	</ion-tabs>
 </ion-view>
