@@ -40,9 +40,55 @@
                     <p class="item-heading">{{ 'mma.mod_quiz.grade' | translate }}</p>
                     <p>{{ attempt.readableGrade }}</p>
                 </div>
-				<div class="item chart-item">
+				<!-- edited -->
+				<div>
+				<h1>here i am edited</h1>
+				<div/>
+				<section class="card text-center" ng-if="canSeeResults">
+                <div class="item item-divider">
+                    <h3>{{ 'mma.mod_choice.responses' | translate }}</h3>
+                </div>
+                <div class="row row-no-padding responsive-md">
+                    <div class="col col-33">
+                        <div class="mm-warning" ng-if="hasOffline">
+                            <i class="icon ion-alert-circled padding"></i> {{ 'mma.mod_choice.resultsnotsynced' | translate }}
+                        </div>
+                        <div class="item chart-item">
                             <canvas class="chart chart-pie" chart-data="data" chart-labels="labels"></canvas>
-                 </div>
+                        </div>
+                    </div>
+                    <div ng-if="choice.publish && results" class="col col-67 item list text-left">
+                        <article ng-repeat="result in results" class="item">
+                            <h2><mm-format-text watch="true">{{ result.text }}</mm-format-text></h2>
+                            <p>{{ 'mma.mod_choice.numberofuser' | translate }}: {{ result.numberofuser }} ({{ 'mm.core.percentagenumber' | translate: {$a: result.percentageamount} }})</p>
+                            <a class="user-with-avatar" ng-repeat="user in result.userresponses" mm-user-link courseid="{{courseid}}" userid="{{user.userid}}" title="{{user.fullname}}">
+                                 <img ng-src="{{user.profileimageurl}}" alt="{{user.fullname}}" mm-external-content>
+                                 <p>{{user.fullname}}</p>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+				
+				<!-- edited -->
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
                 <div class="item item-text-wrap" ng-repeat="data in additionalData">
                     <p class="item-heading">{{ data.title }}</p>
